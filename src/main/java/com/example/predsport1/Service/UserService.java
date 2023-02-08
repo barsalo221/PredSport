@@ -17,6 +17,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
     public User addUser(User user){
+        System.out.print("ssdad");
         return userRepository.save(user);
     }
 
