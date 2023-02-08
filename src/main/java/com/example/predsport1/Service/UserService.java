@@ -3,16 +3,19 @@ package com.example.predsport1.Service;
 import com.example.predsport1.Exception.UserNotFoundException;
 import com.example.predsport1.Repository.UserRepository;
 import com.example.predsport1.entity.User;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
 @Service
 public class UserService {
     private final UserRepository userRepository;
 
+    @Autowired
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
     public User addUser(User user){
         System.out.print("ssdad");
         return userRepository.save(user);
