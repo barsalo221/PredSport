@@ -19,6 +19,7 @@ public class UserResouce {
 
     @GetMapping("/all")
     public ResponseEntity<List<User>> getAllUsers(){
+        System.out.println("sa");
         List<User> users = userService.findAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }

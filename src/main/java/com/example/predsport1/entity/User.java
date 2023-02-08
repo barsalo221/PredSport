@@ -1,6 +1,7 @@
 package com.example.predsport1.entity;
 
 
+import com.example.predsport1.Repository.UserRepository;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,8 @@ public class User {
     private String password;
     private String name;
     private String email;
+
+    private UserRepository userReposistory;
 
 
 }
