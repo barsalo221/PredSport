@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <div th:replace="~{header :: header}"></div>
+</head>
+
+
+<body>
+<!-- navbar of bootstrap -->
+<div th:replace="~{header :: nav_header}"></div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <!-- support different devices" large device , medium device, small device, and align to center, card=add border -->
+        <div class="col-md-6 col-sm-6 container justify-content-center card">
+            <h3 class="text-center">Create New User</h3>
+
+            <div class="card-body">
+                <!-- define action for this column -->
+                <!-- to access the student object we are using th:object="${student}" -->
+
+                <!-- add here  enctype="multipart/form-data" - for pictures -->
+                <form method="post" th:action="@{/users}" th:object="${users}" style="background-color:#FCEAEA">
+                    <!-- design the form -->
+
+                    <div class="from-group">
+                        <label>user ID </label>
+                        <input
+                                required
+                                type="text"
+                                name="id"
+                                th:field="*{id}"
+                                class="form-control"
+                                placeholder="Enter User ID"
+                        >
+                    </div>
+
+                    <div class="from-group">
+                        <label>User username </label>
+                        <input
+                                required
+                                type="text"
+                                name="username"
+                                th:field="*{username}"
+                                class="form-control"
+                                placeholder="Enter User UserName"
+                        >
+                    </div>
+
+                    <div class="from-group">
+                        <label>User password </label>
+                        <input
+                                required
+                                type="password"
+                                name="password"
+                                th:field="*{password}"
+                                class="form-control"
+                                placeholder="Enter User Password"
+                        >
+                    </div>
+
+                    <div class="from-group">
+                        <label>User name </label>
+                        <input
+                                required
+                                type="text"
+                                name="name"
+                                th:field="*{name}"
+                                class="form-control"
+                                placeholder="Enter User Name"
+                        >
+                    </div>
+
+                    <div class="from-group">
+                        <label>User Email </label>
+                        <input
+                                required
+                                type="email"
+                                name="email"
+                                th:field="*{email}"
+                                class="form-control"
+                                placeholder="Enter Student Email"
+                        >
+                    </div>
+
+                    <!-- submit button -->
+                    <div class="box-footer">
+                        <div class="shadow" style="height:40px;width:80px">
+                            <button type="submit" class="btn btn-primary" style="height:40px;width:80px">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.example.predsport1.entity;
 
 
-import com.example.predsport1.Repository.UserRepository;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,19 +15,25 @@ import lombok.Setter;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
 
-    @Column(nullable = false,updatable = false)
+    @Column(nullable = false, unique = true,updatable = false)
     private String username;
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false, length = 30)
     private String name;
+
+
+    @Column(nullable = false, unique = true, length = 45)
     private String email;
 
-    private UserRepository userReposistory;
+
+
 
 
 }

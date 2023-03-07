@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<!-- inorder to use thymeleaf th: we have to add in <html xmlns:th="https://www.thymeleaf.org"-->
+
+<head>
+<div th:replace="~{header :: header}"></div>
+</head>
+<body>
+<!-- navbar -->
+<div th:replace="~{header :: nav_header}"></div>
+<br><br><br><br><br><br><br><br>
+<div class="container justify-content-center card">
+<h3 class="text-center"></h3>
+
+    <a th:href="@{/getStudents}" >
+        <h1>Hello, and Welcome to Students Management System</h1>
+    </a>
+</div>
+<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>

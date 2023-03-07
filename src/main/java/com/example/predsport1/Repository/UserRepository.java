@@ -15,7 +15,7 @@ import java.util.function.Function;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    void deleteUserById();
+    void deleteUserById(Long id);
 
     Optional<User> findUserById(Long id);
 
